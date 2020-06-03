@@ -1,17 +1,37 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native';
+//import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View>
-      <Text style={{ fontSize: 30 }}>HomeScreen</Text>
-      <Button title="Layout" onPress={() => navigation.navigate('Layout')} />
-    </View>
-  );
+
+const HomeScreen = ({navigation}) => {
+    return (
+        <View>
+            <Text style={styles.text}>Home Screen</Text>
+            <Button
+                onPress={()=>navigation.navigate('List')} 
+                title="Go ListScreen"
+            />
+            <Button
+                onPress={()=>navigation.navigate('Image')} 
+                title="Go Image Demo"
+            />
+            <Button
+                onPress={()=>navigation.navigate('Counter')} 
+                title="Go Counter Demo"
+            />
+            <TouchableOpacity 
+                onPress={()=>console.log('pressed')} >
+                <Text>Go other screens</Text>
+            </TouchableOpacity>
+        </View>
+    );
 };
 
-HomeScreen.navigationOptions = {
-  title: 'Home'
-};
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 30,
+    textAlign: 'center'
+  }
+});
 
 export default HomeScreen;
