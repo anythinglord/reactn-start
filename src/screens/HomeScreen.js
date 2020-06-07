@@ -23,6 +23,10 @@ const HomeScreen = ({navigation}) => {
                 onPress={ () => navigation.navigate('Color') } 
                 title="Go Color Demo"
             />
+            <Button
+                onPress={ () => navigation.navigate('Square') } 
+                title="Go Square Demo"
+            />
             <TouchableOpacity 
                 onPress={ () => console.log('pressed') }>
                 <Text>Go other screens</Text>
